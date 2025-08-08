@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "蒙德间章"
+title: " "
 permalink: /portfolio/mondstadt-prologue/
 author_profile: true
 ---
