@@ -37,26 +37,68 @@ author_profile: true
        </div>
      </div>
   </a>
+<div class="version-14-link-container" style="margin: 2rem 0; font-family: 'Segoe UI', sans-serif;">
+  <a href="{{ base_path }}/portfolio/version-1.4-preview/" 
+     style="display: block; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+     
+     <!-- 链接卡片内容 -->
+     <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+       
+       <!-- 左侧图片区域 -->
+       <div style="flex: 0 0 180px; background-color: #5a9bd5; position: relative; overflow: hidden;">
+         <!-- 替换为1.4前瞻相关图片 -->
+         <img src="{{ site.baseurl }}/images/1.4banben.png" 
+              alt="1.4版本前瞻封面" 
+              style="width: 100%; height: 100%; object-fit: cover; display: block;
+                     transition: transform 0.5s ease;">
+         <!-- 装饰元素 -->
+         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                    background: rgba(90, 155, 213, 0.2);"></div>
+       </div>
+       
+       <!-- 右侧文字区域 -->
+       <div style="flex: 1; padding: 1.5rem; min-width: 250px;">
+         <h2 style="margin: 0 0 0.5rem 0; color: #2d4059; font-size: 1.8rem; 
+                   text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+           1.4前瞻
+         </h2>
+         
+         <!-- 小标签（使用不同颜色区分） -->
+         <div style="margin-top: 1rem; display: inline-block; padding: 0.3rem 0.8rem;
+                    background-color: #5a9bd5; color: white; border-radius: 20px;
+                    font-size: 0.8rem; font-weight: 500;">
+           版本前瞻
+         </div>
+       </div>
+     </div>
+  </a>
+</div>
+
+<!-- 交互效果脚本（同时应用于两个链接） -->
+<script>
+  // 获取所有链接元素
+  const links = document.querySelectorAll('.mondstadt-link-container a, .version-14-link-container a');
   
-  <!-- 悬停效果脚本 -->
-  <script>
-    document.querySelector('.mondstadt-link-container a').addEventListener('mouseenter', function() {
+  // 为每个链接添加事件监听
+  links.forEach(link => {
+    link.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-5px)';
       this.style.boxShadow = '0 8px 30px rgba(0,0,0,0.15)';
       this.querySelector('img').style.transform = 'scale(1.05)';
     });
     
-    document.querySelector('.mondstadt-link-container a').addEventListener('mouseleave', function() {
+    link.addEventListener('mouseleave', function() {
       this.style.transform = 'translateY(0)';
       this.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
       this.querySelector('img').style.transform = 'scale(1)';
     });
-  </script>
-</div>
+  });
+</script>
 
 <!-- 其他官方消息内容 -->
 {% for post in site.portfolio %}
-  {% unless post.url contains 'mondstadt-prologue' %}
+  {% unless post.url contains 'mondstadt-prologue' or post.url contains 'version-1.4-preview' %}
     {% include archive-single.html %}
   {% endunless %}
 {% endfor %}
