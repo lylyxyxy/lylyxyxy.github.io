@@ -248,23 +248,23 @@
         transition: $global-transition;
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* 默认隐藏下划线 */
+                transform: scaleX(0); /* 默认隐藏 */
       }
 
-      /* 当前页面导航项 - 蓝色下划线 */
+      /* 当前页面标题 - 蓝色横线常驻 */
       &.active:before {
         background: #22b3eb; /* 蓝色 */
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* 始终显示 */
+                transform: scaleX(1); /* 动效显示 */
       }
 
-      /* 非当前页面导航项 - hover显示红色下划线 */
+      /* 非当前页面标题 - hover效果保持 */
       &:not(.active):hover:before {
-        background: #dc322f; /* 红色 */
+        background: var(--global-border-color);
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* 悬停时显示 */
+                transform: scaleX(1);
       }
     }
   }
@@ -297,28 +297,28 @@
         transition: $global-transition;
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* 默认隐藏下划线 */
+                transform: scaleX(0); /* 默认隐藏 */
       }
 
-      /* 当前页面导航项 - 蓝色下划线 */
+      /* 下拉菜单中当前标题 - 蓝色横线常驻 */
       &.active:before {
         background: #22b3eb; /* 蓝色 */
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* 始终显示 */
-      }
-
-      /* 非当前页面导航项 - hover显示红色下划线 */
-      &:not(.active):hover:before {
-        background: #dc322f; /* 红色 */
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1); /* 悬停时显示 */
+                transform: scaleX(1); /* 动效显示 */
       }
 
       &:hover {
         color: var(--global-masthead-link-color-hover);
         background: var(--global-border-color);
+      }
+
+      /* 下拉菜单中非当前标题 - hover效果 */
+      &:not(.active):hover:before {
+        background: var(--global-border-color);
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1);
       }
     }
 
@@ -388,23 +388,23 @@
       transition: $global-transition;
       -webkit-transform: scaleX(0);
           -ms-transform: scaleX(0);
-              transform: scaleX(0); /* 默认隐藏下划线 */
+              transform: scaleX(0); /* 默认隐藏 */
     }
 
-    /* 当前页面导航项 - 蓝色下划线 */
+    /* 侧边栏当前标题 - 蓝色横线常驻 */
     &.active:before {
       background: #22b3eb; /* 蓝色 */
       -webkit-transform: scaleX(1);
           -ms-transform: scaleX(1);
-              transform: scaleX(1); /* 始终显示 */
+              transform: scaleX(1); /* 动效显示 */
     }
 
-    /* 非当前页面导航项 - hover显示红色下划线 */
+    /* 侧边栏非当前标题 - hover效果 */
     &:not(.active):hover:before {
-      background: #dc322f; /* 红色 */
+      background: var(--global-border-color);
       -webkit-transform: scaleX(1);
           -ms-transform: scaleX(1);
-              transform: scaleX(1); /* 悬停时显示 */
+              transform: scaleX(1);
     }
 
     &:hover {
@@ -499,23 +499,23 @@
       transition: $global-transition;
       -webkit-transform: scaleX(0);
           -ms-transform: scaleX(0);
-              transform: scaleX(0); /* 默认隐藏下划线 */
+              transform: scaleX(0); /* 默认隐藏 */
     }
 
-    /* 当前页面导航项 - 蓝色下划线 */
+    /* 目录当前标题 - 蓝色横线常驻 */
     &.active:before {
       background: #22b3eb; /* 蓝色 */
       -webkit-transform: scaleX(1);
           -ms-transform: scaleX(1);
-              transform: scaleX(1); /* 始终显示 */
+              transform: scaleX(1); /* 动效显示 */
     }
 
-    /* 非当前页面导航项 - hover显示红色下划线 */
+    /* 目录非当前标题 - hover效果 */
     &:not(.active):hover:before {
-      background: #dc322f; /* 红色 */
+      background: var(--global-border-color);
       -webkit-transform: scaleX(1);
           -ms-transform: scaleX(1);
-              transform: scaleX(1); /* 悬停时显示 */
+              transform: scaleX(1);
     }
 
     &:hover {
