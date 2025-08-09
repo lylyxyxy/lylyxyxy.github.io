@@ -243,19 +243,28 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: var(--global-border-color);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide*/
+                transform: scaleX(0); /* 默认隐藏下划线 */
       }
 
-      &:hover:before {
+      /* 当前页面导航项 - 蓝色下划线 */
+      &.active:before {
+        background: #22b3eb; /* 蓝色 */
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal*/
+                transform: scaleX(1); /* 始终显示 */
+      }
+
+      /* 非当前页面导航项 - hover显示红色下划线 */
+      &:not(.active):hover:before {
+        background: #dc322f; /* 红色 */
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1); /* 悬停时显示 */
       }
     }
   }
@@ -272,9 +281,40 @@
     box-shadow: 0 0 10px rgba(#000, 0.25);
 
     a {
+      position: relative;
       margin: 0;
       padding: 10px 20px;
       font-size: $type-size-5;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: 5px;
+        height: 3px;
+        width: calc(100% - 20px);
+        -webkit-transition: $global-transition;
+        transition: $global-transition;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0); /* 默认隐藏下划线 */
+      }
+
+      /* 当前页面导航项 - 蓝色下划线 */
+      &.active:before {
+        background: #22b3eb; /* 蓝色 */
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1); /* 始终显示 */
+      }
+
+      /* 非当前页面导航项 - hover显示红色下划线 */
+      &:not(.active):hover:before {
+        background: #dc322f; /* 红色 */
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1); /* 悬停时显示 */
+      }
 
       &:hover {
         color: var(--global-masthead-link-color-hover);
@@ -332,12 +372,43 @@
   }
 
   a {
+    position: relative;
     display: block;
-    padding: 0.125em 0;
+    padding: 0.125em 0 0.125em 1.5em; /* 预留下划线空间 */
     color: inherit;
 
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0.75em;
+      -webkit-transition: $global-transition;
+      transition: $global-transition;
+      -webkit-transform: scaleX(0);
+          -ms-transform: scaleX(0);
+              transform: scaleX(0); /* 默认隐藏下划线 */
+    }
+
+    /* 当前页面导航项 - 蓝色下划线 */
+    &.active:before {
+      background: #22b3eb; /* 蓝色 */
+      -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+              transform: scaleX(1); /* 始终显示 */
+    }
+
+    /* 非当前页面导航项 - hover显示红色下划线 */
+    &:not(.active):hover:before {
+      background: #dc322f; /* 红色 */
+      -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+              transform: scaleX(1); /* 悬停时显示 */
+    }
+
     &:hover {
-      text-decoration: underline;
+      text-decoration: none; /* 移除默认下划线 */
     }
   }
 
@@ -406,37 +477,70 @@
   list-style: none;
   font-size: 0.8rem;
 
-// 在原有导航样式基础上修改
-a {
-  position: relative;
+  a {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem 0.5rem 2em; /* 预留下划线空间 */
+    color: var(--global-code-text-color);
+    font-size: $type-size-7;
+    font-weight: bold;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--global-border-color);
+    text-decoration-line: none !important;
 
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
-    -webkit-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-            transform: scaleX(0); /* 默认隐藏下划线 */
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0.5em;
+      bottom: 8px;
+      height: 2px;
+      width: 1em;
+      -webkit-transition: $global-transition;
+      transition: $global-transition;
+      -webkit-transform: scaleX(0);
+          -ms-transform: scaleX(0);
+              transform: scaleX(0); /* 默认隐藏下划线 */
+    }
+
+    /* 当前页面导航项 - 蓝色下划线 */
+    &.active:before {
+      background: #22b3eb; /* 蓝色 */
+      -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+              transform: scaleX(1); /* 始终显示 */
+    }
+
+    /* 非当前页面导航项 - hover显示红色下划线 */
+    &:not(.active):hover:before {
+      background: #dc322f; /* 红色 */
+      -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+              transform: scaleX(1); /* 悬停时显示 */
+    }
+
+    &:hover {
+      color: #000;
+      background: var(--global-link-color-hover);
+    }
   }
 
-  // 当前页面导航项 - 蓝色下划线
-  &.active:before {
-    background: #22b3eb; /* 蓝色 */
-    -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-            transform: scaleX(1); /* 始终显示 */
+  > li:last-child {
+    a {
+      border-bottom: none;
+    }
   }
 
-  // 非当前页面导航项 - 鼠标悬停显示红色下划线
-  &:not(.active):hover:before {
-    background: #dc322f; /* 红色 */
-    -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-            transform: scaleX(1); /* 悬停时显示 */
+  li ul > li a {
+    padding-left: 2.5rem;
+    font-weight: normal;
+  }
+
+  /* hide sub sub links on small screens*/
+  li > ul li {
+    display: none;
+
+    @include breakpoint($medium) {
+      display: block;
+    }
   }
 }
