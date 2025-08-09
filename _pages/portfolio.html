@@ -75,27 +75,25 @@ author_profile: true
   </a>
 </div>
 
-<!-- 5.6前瞻链接 -->
-<div class="version-56-link-container version-link-container">
-  <a href="{{ base_path }}/portfolio/version-5.6-preview/" 
-     class="version-link">
-     
-     <div class="version-card">
-       <!-- 左侧图片区域 -->
-       <div class="version-image-container">
-         <img src="{{ site.baseurl }}/images/5.6banben.png" 
-              alt="5.6版本前瞻封面" 
-              class="version-image">
-         <div class="version-image-overlay"></div>
-       </div>
-       
-       <!-- 右侧文字区域 -->
-       <div class="version-text-container">
-         <h2 class="version-title">5.6前瞻</h2>
-       </div>
-     </div>
+<!-- 5.6前瞻链接（与蒙德序章、1.4前瞻样式完全一致） -->
+<div style="margin: 30px auto; max-width: 900px;">
+  <a href="{{ base_path }}/portfolio/version-5.6-preview/" style="text-decoration: none; color: inherit;">
+    <div style="display: flex; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+      
+      <!-- 左侧图片区域 - 与现有卡片尺寸相同 -->
+      <div style="width: 240px; flex-shrink: 0;">
+        <img src="{{ site.baseurl }}/images/5.6banben.png" alt="5.6前瞻封面" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      
+      <!-- 右侧标题区域 - 与现有卡片样式一致 -->
+      <div style="padding: 20px; flex-grow: 1; display: flex; align-items: center;">
+        <h2 style="margin: 0; font-size: 24px; color: #333; font-weight: 500;">5.6前瞻</h2>
+      </div>
+    </div>
   </a>
 </div>
+
 
 <!-- 统一的样式（可以放在页面的<style>区域） -->
 <style>
