@@ -15,7 +15,7 @@ author_profile: true
 
 <div style="text-align: center; margin: 2rem 0;">
   <a href="{{ site.baseurl }}/portfolio/" style="color: #5a9bd5; text-decoration: underline;">
-    ← 返回官方消息页面
+    返回官方消息页面
   </a>
 </div>
     
