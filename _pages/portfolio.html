@@ -1,101 +1,71 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>官方消息 - 同人CP网站</title>
-    <style>
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 30px;
-        }
-        .card {
-            display: flex;
-            background: #fff;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            margin-bottom: 30px;
-        }
-        .card-image {
-            width: 240px;
-            flex-shrink: 0;
-        }
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .card-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-        }
-        .card-title {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
-            font-weight: 500;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ site.baseurl }}/images/gfxx-001.png" alt="蒙德序章封面">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">蒙德序章 - 同人CP推荐</h2>
-            </div>
-        </div>
+---
+layout: archive
+title: "官方消息"
+permalink: /portfolio/
+author_profile: true
+---
 
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ site.baseurl }}/images/1.4banben.png" alt="1.4前瞻封面">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">1.4前瞻 - 同人CP角色搭配</h2>
-            </div>
-        </div>
+{% include base_path %}
 
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ site.baseurl }}/images/5.6banben.png" alt="5.6前瞻封面">
-            </div>
-            <div class="card-content">
-                <h2 class="card-title">5.6前瞻 - 同人CP最新动态</h2>
-            </div>
-        </div>
+<div style="margin: 30px auto; max-width: 900px;">
+  <a href="{{ base_path }}/portfolio/mondstadt-prologue/" style="text-decoration: none; color: inherit;">
+    <div style="display: flex; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+      <div style="width: 240px; flex-shrink: 0;">
+        <img src="{{ site.baseurl }}/images/gfxx-001.png" 
+             alt="蒙德序章封面" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="padding: 20px; flex-grow: 1; display: flex; align-items: center;">
+        <h2 style="margin: 0; font-size: 24px; color: #333; font-weight: 500;">蒙德序章</h2>
+      </div>
     </div>
+  </a>
+</div>
 
-    <script>
-        // 悬停动画效果
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px)';
-                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.15)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 3px 10px rgba(0,0,0,0.1)';
-            });
-        });
-    </script>
-</body>
-</html>
+<!-- 已有的1.4前瞻链接 -->
+<div style="margin: 30px auto; max-width: 900px;">
+  <a href="{{ base_path }}/portfolio/version-1.4-preview/" style="text-decoration: none; color: inherit;">
+    <div style="display: flex; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+      <div style="width: 240px; flex-shrink: 0;">
+        <img src="{{ site.baseurl }}/images/1.4banben.png" alt="1.4前瞻封面" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="padding: 20px; flex-grow: 1; display: flex; align-items: center;">
+        <h2 style="margin: 0; font-size: 24px; color: #333; font-weight: 500;">1.4前瞻</h2>
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- 新增的5.6前瞻链接（与上面样式完全一致） -->
+<div style="margin: 30px auto; max-width: 900px;">
+  <a href="{{ base_path }}/portfolio/version-5.6-preview/" style="text-decoration: none; color: inherit;">
+    <div style="display: flex; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+      <div style="width: 240px; flex-shrink: 0;">
+        <img src="{{ site.baseurl }}/images/5.6banben.png" alt="5.6前瞻封面" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div style="padding: 20px; flex-grow: 1; display: flex; align-items: center;">
+        <h2 style="margin: 0; font-size: 24px; color: #333; font-weight: 500;">5.6前瞻</h2>
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- 统一的悬停动画效果（如果原有页面有此脚本请保留） -->
+<script>
+  // 获取所有版本链接卡片
+  const versionCards = document.querySelectorAll('a[href*="/portfolio/version-"] > div');
+  
+  versionCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-3px)';
+      this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.15)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+      this.style.boxShadow = '0 3px 10px rgba(0,0,0,0.1)';
+    });
+  });
+</script>
