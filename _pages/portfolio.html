@@ -7,17 +7,18 @@ author_profile: true
 
 {% include base_path %}
 
+<!-- 蒙德序章链接（与1.4前瞻尺寸完全一致） -->
 <div class="mondstadt-link-container" style="margin: 2rem 0; font-family: 'Segoe UI', sans-serif;">
   <a href="{{ base_path }}/portfolio/mondstadt-prologue/" 
      style="display: block; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; 
-            box-shadow: 0 4px 20px rgba(0，0，0，0.1); transition: transform 0.3s ease， box-shadow 0.3s ease;">
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
      
-     <!-- 链接卡片内容 -->
+     <!-- 链接卡片内容 - 尺寸与1.4前瞻完全一致 -->
      <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-                 height: 220px; /* 固定高度，与1.4前瞻保持一致 */">
+                 height: 200px; /* 固定高度 */">
        
-       <!-- 左侧图片区域 -->
-       <div style="flex: 0 0 220px; /* 蒙德序章宽度 */
+       <!-- 左侧图片区域 - 与1.4前瞻相同宽度 -->
+       <div style="flex: 0 0 280px; /* 相同宽度 */
                    background-color: #3a7bd5; 
                    position: relative; 
                    overflow: hidden;">
@@ -39,50 +40,46 @@ author_profile: true
      </div>
   </a>
 </div>
+
+<!-- 1.4前瞻链接（与蒙德序章尺寸完全一致） -->
 <div class="version-14-link-container" style="margin: 2rem 0; font-family: 'Segoe UI', sans-serif;">
   <a href="{{ base_path }}/portfolio/version-1.4-preview/" 
      style="display: block; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
      
-     <!-- 链接卡片内容 -->
-     <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+     <!-- 链接卡片内容 - 尺寸与蒙德序章完全一致 -->
+     <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                 height: 200px; /* 固定相同高度 */">
        
-       <!-- 左侧图片区域 - 仅增加宽度，保持高度不变 -->
-       <div style="flex: 0 0 280px; /* 增加宽度值 */
+       <!-- 左侧图片区域 - 与蒙德序章相同宽度 -->
+       <div style="flex: 0 0 280px; /* 相同宽度 */
                    background-color: #5a9bd5; 
                    position: relative; 
-                   overflow: hidden;
-                   min-height: 160px; /* 固定最小高度，确保高度不变 */">
-         <!-- 1.4前瞻相关图片 -->
+                   overflow: hidden;">
          <img src="{{ site.baseurl }}/images/1.4banben.png" 
               alt="1.4版本前瞻封面" 
-              style="width: 100%; 
-                     height: 100%; 
-                     object-fit: cover; /* 保持比例，覆盖区域 */
-                     display: block;
+              style="width: 100%; height: 100%; object-fit: cover; display: block;
                      transition: transform 0.5s ease;">
-         <!-- 装饰元素 -->
          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                     background: rgba(90, 155, 213, 0.2);"></div>
        </div>
        
        <!-- 右侧文字区域 -->
        <div style="flex: 1; padding: 1.5rem; min-width: 250px;">
-         <h2 style="margin: 0 0 0.5rem 0; color: #2d4059; font-size: 1.8rem; 
-                   text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
-           1.4前瞻
-         </h2>
+         <div style="margin-top: 1rem; display: inline-block; padding: 0.3rem 0.8rem;
+                    background-color: #5a9bd5; color: white; border-radius: 20px;
+                    font-size: 0.8rem; font-weight: 500;">
+           版本前瞻
+         </div>
        </div>
      </div>
   </a>
 </div>
 
-<!-- 交互效果脚本（同时应用于两个链接） -->
+<!-- 交互效果脚本 -->
 <script>
-  // 获取所有链接元素
   const links = document.querySelectorAll('.mondstadt-link-container a, .version-14-link-container a');
   
-  // 为每个链接添加事件监听
   links.forEach(link => {
     link.addEventListener('mouseenter', function() {
       this.style.transform = 'translateY(-5px)';
