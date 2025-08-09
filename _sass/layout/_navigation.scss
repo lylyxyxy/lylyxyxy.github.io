@@ -406,39 +406,37 @@
   list-style: none;
   font-size: 0.8rem;
 
-  a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: var(--global-code-text-color);
-    font-size: $type-size-7;
-    font-weight: bold;
-    line-height: 1.5;
-    border-bottom: 1px solid var(--global-border-color);
-    text-decoration-line: none !important;
+// 在原有导航样式基础上修改
+a {
+  position: relative;
 
-    &:hover {
-      color: #000;
-      background: var(--global-link-color-hover);
-    }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    -webkit-transition: $global-transition;
+    transition: $global-transition;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0); /* 默认隐藏下划线 */
   }
 
-  > li:last-child {
-    a {
-      border-bottom: none;
-    }
+  // 当前页面导航项 - 蓝色下划线
+  &.active:before {
+    background: #22b3eb; /* 蓝色 */
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1); /* 始终显示 */
   }
 
-  li ul > li a {
-    padding-left: 2rem;
-    font-weight: normal;
-  }
-
-  /* hide sub sub links on small screens*/
-  li > ul li {
-    display: none;
-
-    @include breakpoint($medium) {
-      display: block;
-    }
+  // 非当前页面导航项 - 鼠标悬停显示红色下划线
+  &:not(.active):hover:before {
+    background: #dc322f; /* 红色 */
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1); /* 悬停时显示 */
   }
 }
