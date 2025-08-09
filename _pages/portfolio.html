@@ -7,23 +7,24 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- 美化的蒙德序章链接 -->
 <div class="mondstadt-link-container" style="margin: 2rem 0; font-family: 'Segoe UI', sans-serif;">
   <a href="{{ base_path }}/portfolio/mondstadt-prologue/" 
      style="display: block; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            box-shadow: 0 4px 20px rgba(0，0，0，0.1); transition: transform 0.3s ease， box-shadow 0.3s ease;">
      
      <!-- 链接卡片内容 -->
-     <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+     <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                 height: 220px; /* 固定高度，与1.4前瞻保持一致 */">
        
        <!-- 左侧图片区域 -->
-       <div style="flex: 0 0 180px; background-color: #3a7bd5; position: relative; overflow: hidden;">
-         <!-- 替换为相关图片 -->
+       <div style="flex: 0 0 220px; /* 蒙德序章宽度 */
+                   background-color: #3a7bd5; 
+                   position: relative; 
+                   overflow: hidden;">
          <img src="{{ site.baseurl }}/images/gfxx-001.png" 
               alt="蒙德序章封面" 
               style="width: 100%; height: 100%; object-fit: cover; display: block;
                      transition: transform 0.5s ease;">
-         <!-- 装饰元素 -->
          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                     background: rgba(58, 123, 213, 0.2);"></div>
        </div>
@@ -37,6 +38,7 @@ author_profile: true
        </div>
      </div>
   </a>
+</div>
 <div class="version-14-link-container" style="margin: 2rem 0; font-family: 'Segoe UI', sans-serif;">
   <a href="{{ base_path }}/portfolio/version-1.4-preview/" 
      style="display: block; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; 
