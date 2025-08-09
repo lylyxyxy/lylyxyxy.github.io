@@ -41,13 +41,23 @@ author_profile: true
   <a href="{{ base_path }}/portfolio/version-1.4-preview/" 
      style="display: block; text-decoration: none; color: inherit; border-radius: 12px; overflow: hidden; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-    
+     
+     <!-- 链接卡片内容 -->
      <div style="display: flex; flex-wrap: wrap; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
        
-       <div style="flex: 0 0 240px; background-color: #5a9bd5; position: relative; overflow: hidden;">
+       <!-- 左侧图片区域 - 仅增加宽度，保持高度不变 -->
+       <div style="flex: 0 0 280px; /* 增加宽度值 */
+                   background-color: #5a9bd5; 
+                   position: relative; 
+                   overflow: hidden;
+                   min-height: 160px; /* 固定最小高度，确保高度不变 */">
+         <!-- 1.4前瞻相关图片 -->
          <img src="{{ site.baseurl }}/images/1.4banben.png" 
               alt="1.4版本前瞻封面" 
-              style="width: 100%; height: 100%; object-fit: cover; display: block;
+              style="width: 100%; 
+                     height: 100%; 
+                     object-fit: cover; /* 保持比例，覆盖区域 */
+                     display: block;
                      transition: transform 0.5s ease;">
          <!-- 装饰元素 -->
          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
