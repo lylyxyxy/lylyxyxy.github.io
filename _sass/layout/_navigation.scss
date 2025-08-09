@@ -243,6 +243,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
+        background: var(--global-border-color); /* 默认悬停颜色（红色系） */
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -251,20 +252,19 @@
                 transform: scaleX(0); /* 默认隐藏 */
       }
 
-      /* 当前页面标题 - 蓝色横线常驻 */
+      /* 激活状态 - 蓝色下划线始终显示 */
       &.active:before {
         background: #22b3eb; /* 蓝色 */
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* 动效显示 */
+                transform: scaleX(1); /* 强制显示 */
       }
 
-      /* 非当前页面标题 - hover效果保持 */
+      /* 非激活状态 - 悬停时显示默认颜色下划线 */
       &:not(.active):hover:before {
-        background: var(--global-border-color);
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1);
+                transform: scaleX(1); /* 显示 */
       }
     }
   }
@@ -281,44 +281,44 @@
     box-shadow: 0 0 10px rgba(#000, 0.25);
 
     a {
-      position: relative;
+      position: relative; /* 新增 */
       margin: 0;
       padding: 10px 20px;
       font-size: $type-size-5;
 
-      &:before {
+      &:before { /* 新增 */
         content: "";
         position: absolute;
         left: 10px;
         bottom: 5px;
         height: 3px;
         width: calc(100% - 20px);
+        background: var(--global-border-color);
         -webkit-transition: $global-transition;
         transition: $global-transition;
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* 默认隐藏 */
+                transform: scaleX(0);
       }
 
-      /* 下拉菜单中当前标题 - 蓝色横线常驻 */
+      /* 下拉菜单激活项 - 蓝色下划线 */
       &.active:before {
-        background: #22b3eb; /* 蓝色 */
+        background: #22b3eb;
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* 动效显示 */
+                transform: scaleX(1);
+      }
+
+      /* 下拉菜单非激活项 - 悬停效果 */
+      &:not(.active):hover:before {
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1);
       }
 
       &:hover {
         color: var(--global-masthead-link-color-hover);
         background: var(--global-border-color);
-      }
-
-      /* 下拉菜单中非当前标题 - hover效果 */
-      &:not(.active):hover:before {
-        background: var(--global-border-color);
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1);
       }
     }
 
@@ -372,43 +372,12 @@
   }
 
   a {
-    position: relative;
     display: block;
-    padding: 0.125em 0 0.125em 1.5em; /* 预留下划线空间 */
+    padding: 0.125em 0;
     color: inherit;
 
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 3px;
-      width: 0.75em;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
-      -webkit-transform: scaleX(0);
-          -ms-transform: scaleX(0);
-              transform: scaleX(0); /* 默认隐藏 */
-    }
-
-    /* 侧边栏当前标题 - 蓝色横线常驻 */
-    &.active:before {
-      background: #22b3eb; /* 蓝色 */
-      -webkit-transform: scaleX(1);
-          -ms-transform: scaleX(1);
-              transform: scaleX(1); /* 动效显示 */
-    }
-
-    /* 侧边栏非当前标题 - hover效果 */
-    &:not(.active):hover:before {
-      background: var(--global-border-color);
-      -webkit-transform: scaleX(1);
-          -ms-transform: scaleX(1);
-              transform: scaleX(1);
-    }
-
     &:hover {
-      text-decoration: none; /* 移除默认下划线 */
+      text-decoration: underline;
     }
   }
 
@@ -478,45 +447,14 @@
   font-size: 0.8rem;
 
   a {
-    position: relative;
     display: block;
-    padding: 0.5rem 1rem 0.5rem 2em; /* 预留下划线空间 */
+    padding: 0.5rem 1rem;
     color: var(--global-code-text-color);
     font-size: $type-size-7;
     font-weight: bold;
     line-height: 1.5;
     border-bottom: 1px solid var(--global-border-color);
     text-decoration-line: none !important;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0.5em;
-      bottom: 8px;
-      height: 2px;
-      width: 1em;
-      -webkit-transition: $global-transition;
-      transition: $global-transition;
-      -webkit-transform: scaleX(0);
-          -ms-transform: scaleX(0);
-              transform: scaleX(0); /* 默认隐藏 */
-    }
-
-    /* 目录当前标题 - 蓝色横线常驻 */
-    &.active:before {
-      background: #22b3eb; /* 蓝色 */
-      -webkit-transform: scaleX(1);
-          -ms-transform: scaleX(1);
-              transform: scaleX(1); /* 动效显示 */
-    }
-
-    /* 目录非当前标题 - hover效果 */
-    &:not(.active):hover:before {
-      background: var(--global-border-color);
-      -webkit-transform: scaleX(1);
-          -ms-transform: scaleX(1);
-              transform: scaleX(1);
-    }
 
     &:hover {
       color: #000;
@@ -531,7 +469,7 @@
   }
 
   li ul > li a {
-    padding-left: 2.5rem;
+    padding-left: 2rem;
     font-weight: normal;
   }
 
