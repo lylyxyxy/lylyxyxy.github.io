@@ -350,6 +350,11 @@ tag_archive:
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
-  clippings: all
+  clippings: 全部
   ignore:
     envs: development
+# 在_config.yml中添加
+lang: zh-CN
+pagination:
+  next_label: "下一个"
+  prev_label: "上一个"
