@@ -363,3 +363,50 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
       display: none;
     }
   }
+/* 全局动画与过渡效果优化 */
+:root {
+  --primary-color: #ff6b8b; /* 同人网站常用粉色调 */
+  --secondary-color: #7b66ff;
+  --hover-scale: 1.03;
+  --transition-speed: 0.3s;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 链接hover效果增强 */
+a {
+  position: relative;
+  transition: color var(--transition-speed);
+  
+  &:hover {
+    color: var(--primary-color);
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
+  }
+  
+  &:hover:after {
+    width: 100%;
+  }
+}
+
+/* 卡片悬浮效果 */
+.card, .post, .archive__item {
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  
+  &:hover {
+    transform: translateY(-5px) scale(var(--hover-scale));
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+}
