@@ -158,7 +158,7 @@ analytics:
 include:
   - .htaccess
   - _pages
-  - files
+  - 文件
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -353,8 +353,3 @@ compress_html:
   clippings: 全部
   ignore:
     envs: development
-# 在_config.yml中添加
-lang: zh-CN
-pagination:
-  next_label: "下一个"
-  prev_label: "上一个"
